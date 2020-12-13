@@ -45,12 +45,6 @@ mapM_' _ [] = return ()
 mapM_' f (x:xs) = do
     f x
     mapM_' f xs
---    printLines ys
- --   where
- --               printLines [] = return()
-   --     printLines (w:ws) = do
-     --       putStrLn w
-       --     printLines ws
 
 showParity' :: [Int] -> IO()
 showParity' = mapM_ printEven
