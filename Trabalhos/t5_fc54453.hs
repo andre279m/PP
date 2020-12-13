@@ -5,15 +5,15 @@ main :: IO ()
 main = do
     (file:_) <- getArgs
     content <- readFile file
-    printer content
-    linhas <- lines content
+    let linhas = lines content
+    printer linhas
     stackGrep linhas []
     
 
-printer :: Show a => [a] -> IO ()
+printer :: [String] -> IO ()
 printer [] = return ()
 printer (x:xs) = do
-    putStrLn $ show x
+    putStrLn x
     printer xs
 
 filters :: [String] -> [String] -> [String]
@@ -22,7 +22,7 @@ filters xs (y:ys) = filters (filter (isInfixOf y) xs ) ys
 
 stackGrep :: [String] -> [String] -> IO ()
 stackGrep xs ys = do 
-    putStrLn $ "Filtering:" ++ show ys
+    putStrLn $ "Filtering: " ++ intercalate ", " ys
     paraFiltro <- getLine
     if(paraFiltro == "pop" && null ys)
         then return ()
@@ -33,4 +33,3 @@ stackGrep xs ys = do
     else do
         printer $ filters xs $ ys ++ [paraFiltro]
         stackGrep xs $ ys ++ [paraFiltro]
-

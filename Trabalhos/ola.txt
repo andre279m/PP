@@ -1,4 +1,5 @@
-ola
-eu sou o 
-Andre ahahaha
-sou bue engracado
+[haskell] Data.List
+[haskell] System.Environment
+[java] java.util.List
+[java] java.util.ArrayList
+[java] java.io.File
