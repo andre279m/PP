@@ -1,13 +1,19 @@
 import System.Environment
+import System.Directory
 import Data.List
 
 main :: IO ()
 main = do
     (file:_) <- getArgs
-    content <- readFile file
-    let linhas = lines content
-    printer linhas
-    stackGrep linhas []
+    fileExists <- doesFileExist file
+    if not fileExists  
+            then
+                putStrLn "The file doesn't exist!"
+            else do
+                content <- readFile file
+                let linhas = lines content
+                printer linhas
+                stackGrep linhas []
     
 
 printer :: [String] -> IO ()
