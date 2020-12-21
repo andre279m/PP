@@ -34,9 +34,13 @@ stackGrep xs ys = do
     if(paraFiltro == "pop" && null ys)
         then return ()
         else if(paraFiltro == "pop" && not (null ys))
-        then do
-            printer $ filters xs $ init ys
-            stackGrep xs $ init ys
+            then do
+                printer $ filters xs $ init ys
+                stackGrep xs $ init ys
+            else if(null paraFiltro)
+                then do
+                    printer $ filters xs $ ys
+                    stackGrep xs $ ys
     else do
         printer $ filters xs $ ys ++ [paraFiltro]
         stackGrep xs $ ys ++ [paraFiltro]
