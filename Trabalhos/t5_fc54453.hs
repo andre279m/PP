@@ -29,7 +29,7 @@ stackGrep :: [String] -> [String] -> IO ()
 stackGrep xs ys = do 
     putStrLn ""
     putStrLn $ "Filtering: " ++ intercalate ", " ys
-    putStr "> "
+    --putStr "> "
     paraFiltro <- getLine
     if(paraFiltro == "pop" && null ys)
         then return ()
