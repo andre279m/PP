@@ -15,7 +15,6 @@ main = do
                 printer linhas
                 stackGrep linhas []
     
-
 printer :: [String] -> IO ()
 printer [] = return ()
 printer (x:xs) = do
@@ -28,7 +27,9 @@ filters xs (y:ys) = filters (filter (isInfixOf y) xs ) ys
 
 stackGrep :: [String] -> [String] -> IO ()
 stackGrep xs ys = do 
+    putStrLn ""
     putStrLn $ "Filtering: " ++ intercalate ", " ys
+    putStr "> "
     paraFiltro <- getLine
     if(paraFiltro == "pop" && null ys)
         then return ()

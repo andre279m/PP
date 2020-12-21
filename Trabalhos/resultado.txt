@@ -1,0 +1,59 @@
+a
+ab
+abc
+def
+d
+ef
+
+Filtering: 
+> a
+ab
+abc
+
+Filtering: a
+> a
+ab
+abc
+def
+d
+ef
+
+Filtering: 
+> ab
+abc
+
+Filtering: ab
+> a
+ab
+abc
+def
+d
+ef
+
+Filtering: 
+> def
+d
+
+Filtering: d
+> def
+
+Filtering: d, e
+> def
+
+Filtering: d, e, f
+> def
+
+Filtering: d, e
+> def
+d
+
+Filtering: d
+> a
+ab
+abc
+def
+d
+ef
+
+Filtering: 
+> 

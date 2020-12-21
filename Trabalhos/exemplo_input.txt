@@ -1,0 +1,11 @@
+a
+pop
+ab
+pop
+d
+e
+f
+pop
+pop
+pop
+pop
